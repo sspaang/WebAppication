@@ -27,7 +27,7 @@
             
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $username;
-                
+
                 if (mysqli_num_rows($result_student) == 1) { // ถ้ามีเป็นนักเรียน
                     header("location: student_home.php");
                 } elseif (mysqli_num_rows($result_teacher) == 1) { // ถ้าเป็นอาจารย์
@@ -38,10 +38,6 @@
                 $_SESSION['error'] = "Wrong username or password, try again";
                 header("location: login.php");
             }
-            } else {
-                array_push($errors, "Username & Password is required");
-                $_SESSION['error'] = "Username & Password is required";
-                header("location: login.php");
         }
     }
 
