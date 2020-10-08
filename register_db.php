@@ -11,6 +11,7 @@
         $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
+        $position = mysqli_real_escape_string($conn, $_POST['position']);
 
         if (empty($username)) {
             array_push($errors, "Username is required");
@@ -52,14 +53,19 @@
         }
 
         if (count($errors) == 0) {
-            $password = md5($password_1); // encrypt password
+            $password = $password_1;
 
-            $sql = "INSERT INTO users (username, email, password, firstname, lastname) VALUES ('$username', '$email', '$password', '$firstname', '$lastname')";
+            $sql = "INSERT INTO users (username, position,email, password, firstname, lastname) VALUES ('$username', '$position','$email', '$password', '$firstname', '$lastname')";
             mysqli_query($conn, $sql);
 
             $_SESSION['username'] = $username;
-            $_SESSION['success'] = "You are now logged in";
-            header('location: index_user.php');
+            if ($position == '1') {
+                $_SESSION['success'] = "You are now logged in";
+                header('location: student_home.php');
+            } elseif ($position == '2') {
+                $_SESSION['success'] = "You are now logged in";
+                header('location: teacher_home.php');
+            } 
         } else {
             header("location: register.php");
         }

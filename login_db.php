@@ -17,13 +17,14 @@
         }
 
         if (count($errors) == 0) {
-            $password = md5($password);
+            $password = $password;
             $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password' ";
             $result  = mysqli_query($conn, $query);
+            $level = "SELECT position FROM users WHERE username = '$username' AND password = '$password'";
             
             if (mysqli_num_rows($result) == 1) {
                 $_SESSION['username'] = $username;
-                header("location: index_user.php");
+                    header("location: student_home.php");
             } else {
                 array_push($errors, "Wrong username or password");
                 $_SESSION['error'] = "Wrong username or password, try again";

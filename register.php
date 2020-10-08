@@ -65,7 +65,7 @@
         <label for="inputLName" class="sr-only">Lastname</label>
         <input type="text" id="inputLName" class="form-control" name="lastname" placeholder="Lastname" required>
         <label for="Position" class="sr-only">Position</label>
-        <select name="position_mb" id="Position" class="form-control" required>
+        <select name="position" id="Position" class="form-control" required>
           <option>Choose Position...</option>
           <option value="1">นักเรียน</option>
           <option value="2">อาจารย์</option>
