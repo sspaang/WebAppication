@@ -102,7 +102,7 @@
                         <tr>
                         <?php 
                             // query information from 'users' table
-                            $query = "SELECT * FROM users ORDER BY id asc" or die("Error:" . mysqli_error($link));
+                            $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
                             //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
                             $result = mysqli_query($conn, $query); 
                             while($row = mysqli_fetch_array($result)) { 
