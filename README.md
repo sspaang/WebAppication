@@ -1,2 +1,2 @@
 # WebAppication
-Server.php for cannect to database
+server.php for connect to database
