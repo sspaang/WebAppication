@@ -1,15 +1,13 @@
-<?php 
-    //connect database
-    include('server.php');  
-?>    
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- ไฟล์สำหรับ copy เท่านั้น -->
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Student List</title>
+    <title>Home</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -29,14 +27,14 @@
         <!-- sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="teacher_home.php">
+                <a href="index.php"> <!-- Logo web -->
                     <img src="https://www.flaticon.com/svg/static/icons/svg/3468/3468192.svg" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">  
                     <h3 style="display: inline;">Kiki</h3>
                 </a>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Menu</p>
+                <p>Menu</p> 
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -69,10 +67,10 @@
                     </ul>
                 </li>
                 <li>
-                <a href="teacher_home.php">Back</a>
+                <a href="login.php">Sign in</a>
                 </li>
                 <li>
-                    <a href="#">Contact</a>
+                    <a href="register.php">Sign up</a>
                 </li>
             </ul>
         </nav>
@@ -81,7 +79,6 @@
         <div id="content">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                 <div class="container-fluid">
-
                     <button type="button" id="sidebarCollapse" class="btn btn-info">
                         <i class="fas fa-align-left"></i>
                         <span>Toggle Sidebar</span>
@@ -89,41 +86,9 @@
                 </div>
             </nav>
             <div class="container-fluid">
-                <div class="table-responsive">
-                    <table class="table table-hover">
-                    <caption>List of students</caption>
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">#ID</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <?php 
-                            // query information from 'users' table
-                            $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
-                            //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
-                            $result = mysqli_query($conn, $query); 
-                            while($row = mysqli_fetch_array($result)) { 
-                                echo "<tr>";
-                                echo "<td>" .$row["id"] .  "</td> "; 
-                                echo "<td>" .$row["username"] .  "</td> ";  
-                                echo "<td>" .$row["firstname"] .  "</td> ";
-                                echo "<td>" .$row["lastname"] .  "</td> ";
-                                echo "<td>" .$row["email"] .  "</td> ";
-                                echo "</tr>";
-                            }
-                            //5. close connection
-                            mysqli_close($conn);
-                        ?>
-                        </tr>
-                    </tbody>
-                    </table>
-                </div>
+                
+                <!-- Other Contents Here -->    
+
             </div>
         </div>
     </div>
@@ -132,8 +97,7 @@
             <span class="text-muted">&copy;Sineenat Seesung 2020</span>
         </div>
     </footer>
-  
-
+    
     <!-- jQuery CDN - Slim version (=without AJAX) -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <!-- Popper.JS -->
@@ -156,6 +120,5 @@
             });
         });
     </script>
-
 </body>
 </html>
