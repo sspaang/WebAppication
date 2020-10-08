@@ -66,7 +66,7 @@
                     </ul>
                 </li>
                 <li>
-                <a href="index_teacher.php">Back</a>
+                <a href="teacher_home.php">Back</a>
                 </li>
                 <li>
                     <a href="#">Contact</a>
