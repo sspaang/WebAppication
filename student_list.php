@@ -3,7 +3,7 @@
     include('server.php');
 
     include 'header.php';
-    include 'banner.php';
+    include 'banner_loggedin.php';
     include 'sidebar_teacher.php';
     
 ?>
