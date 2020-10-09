@@ -20,12 +20,15 @@
                 $_SESSION['username'] = $username;
                 $_SESSION['id'] = $row['id'];
                 $_SESSION['position'] = $row['position'];
-
+                
+                header('location: home.php');
+                /*
                 if ($_SESSION['position'] == '1') { // ถ้าเป็นนักเรียน
                     header("location: student_home.php");
                 } elseif ($_SESSION['position'] == '2') { // ถ้าเป็นอาจารย์
                     header("location: teacher_home.php");
                 }
+                */
             } else {
                 array_push($errors, "Wrong username or password");
                 $_SESSION['error'] = "Wrong username or password, try again";

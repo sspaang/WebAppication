@@ -36,7 +36,7 @@
             if (count($errors) == 0) {
                 $password = $password_1;
 
-                $sql = "INSERT INTO users (username, position,email, password, firstname, lastname) VALUES ('$username', '$position','$email', '$password', '$firstname', '$lastname')";
+                $sql = "INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('$username', '$position','$email', '$password', '$firstname', '$lastname')";
                 mysqli_query($conn, $sql);
 
                 $_SESSION['username'] = $username; // เก็บ session username
