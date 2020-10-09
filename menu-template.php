@@ -1,13 +1,20 @@
+<?php 
+    session_start();
 
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: index.php');
+    }
+?>
+<!-- for copy  -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ไฟล์สำหรับ copy เท่านั้น -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Home for Student</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -27,14 +34,14 @@
         <!-- sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="index.php"> <!-- Logo web -->
+                <a href="student_home.php">
                     <img src="https://www.flaticon.com/svg/static/icons/svg/3468/3468192.svg" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">  
                     <h3 style="display: inline;">Kiki</h3>
                 </a>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Menu</p> 
+                <p>Menu</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -53,24 +60,18 @@
                 <a href="#">About</a>
                 </li>
                 <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                         <li>
-                            <a href="#">Page 1</a>
+                            <a href="#">Change password</a>
                         </li>
                         <li>
-                            <a href="#">Page 2</a>
-                        </li>
-                        <li>
-                            <a href="#">Page 3</a>
+                            <a href="#">Change info.</a>
                         </li>
                     </ul>
                 </li>
                 <li>
-                <a href="login.php">Sign in</a>
-                </li>
-                <li>
-                    <a href="register.php">Sign up</a>
+                    <a href="index.php?logout='1'">Sign out</a>
                 </li>
             </ul>
         </nav>
@@ -87,11 +88,12 @@
             </nav>
             <div class="container-fluid">
                 
-                <!-- Other Contents Here -->    
+                <!-- Content -->    
 
             </div>
         </div>
     </div>
+
     <footer class="page-footer bg-dark fixed-bottom">
         <div class="footer-copyright text-center py-3">
             <span class="text-muted">&copy;Sineenat Seesung 2020</span>
