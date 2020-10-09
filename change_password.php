@@ -7,7 +7,7 @@
         header('location: index.php');
     }
 ?>
-<!-- for copy  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -60,13 +60,16 @@
                 <a href="#">About</a>
                 </li>
                 <li>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Pages</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
-                <li>
-                            <a href="change_password.php">Change password</a>
+                        <li>
+                            <a href="#">Page 1</a>
                         </li>
                         <li>
-                            <a href="change_info.php">Change info.</a>
+                            <a href="#">Page 2</a>
+                        </li>
+                        <li>
+                            <a href="#">Page 3</a>
                         </li>
                     </ul>
                 </li>
@@ -86,10 +89,35 @@
                     </button> 
                 </div>
             </nav>
-            <div class="container-fluid">
-                
-                <!-- Content -->    
+            <div class="container-fluid">    
+                <div class="table-responsive">
+                    <table class="table table-hover"> <!-- เอา form มาใส่แทน -->
+                    <caption>List of students</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">#ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <?php 
+                            // query information from 'users' table
+                            $query = "SELECT * FROM users WHERE position = '1' AND username =  " or die("Error:" . mysqli_error($link));
+                            //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
+                            $result = mysqli_query($conn, $query); 
+                            https://www.youtube.com/watch?v=wXu0ymUEIR4
 
+                            //5. close connection
+                            mysqli_close($conn);
+                        ?>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>

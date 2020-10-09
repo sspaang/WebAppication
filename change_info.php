@@ -91,7 +91,7 @@
             </nav>
             <div class="container-fluid">    
                 <div class="table-responsive">
-                    <table class="table table-hover">
+                    <table class="table table-hover"> <!-- เอา form มาใส่แทน -->
                     <caption>List of students</caption>
                     <thead class="thead-dark">
                         <tr>
@@ -110,6 +110,7 @@
                             //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
                             $result = mysqli_query($conn, $query); 
                             https://www.youtube.com/watch?v=wXu0ymUEIR4
+
                             //5. close connection
                             mysqli_close($conn);
                         ?>

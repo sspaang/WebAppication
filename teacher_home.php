@@ -62,11 +62,11 @@
                 <li>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Profile</a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
-                        <li>
-                            <a href="#">Change password</a>
+                <li>
+                            <a href="change_password.php">Change password</a>
                         </li>
                         <li>
-                            <a href="#">Change info.</a>
+                            <a href="change_info.php">Change info.</a>
                         </li>
                     </ul>
                 </li>
