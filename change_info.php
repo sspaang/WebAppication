@@ -1,13 +1,20 @@
+<?php 
+    session_start();
+
+    if (isset($_GET['logout'])) {
+        session_destroy();
+        unset($_SESSION['username']);
+        header('location: index.php');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- ไฟล์สำหรับ copy เท่านั้น -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Home</title>
+    <title>Home for Student</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
 
@@ -27,14 +34,14 @@
         <!-- sidebar -->
         <nav id="sidebar">
             <div class="sidebar-header">
-                <a href="index.php"> <!-- Logo web -->
+                <a href="student_home.php">
                     <img src="https://www.flaticon.com/svg/static/icons/svg/3468/3468192.svg" width="40" height="40" class="d-inline-block align-top" alt="" loading="lazy">  
                     <h3 style="display: inline;">Kiki</h3>
                 </a>
             </div>
 
             <ul class="list-unstyled components">
-                <p>Menu</p> 
+                <p>Menu</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -67,10 +74,7 @@
                     </ul>
                 </li>
                 <li>
-                <a href="login.php">Sign in</a>
-                </li>
-                <li>
-                    <a href="register.php">Sign up</a>
+                    <a href="index.php?logout='1'">Sign out</a>
                 </li>
             </ul>
         </nav>
@@ -85,13 +89,39 @@
                     </button> 
                 </div>
             </nav>
-            <div class="container-fluid">
-                
-                <!-- Other Contents Here -->    
+            <div class="container-fluid">    
+                <div class="table-responsive">
+                    <table class="table table-hover"> <!-- เอา form มาใส่แทน -->
+                    <caption>List of students</caption>
+                    <thead class="thead-dark">
+                        <tr>
+                        <th scope="col">#ID</th>
+                        <th scope="col">Username</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Email</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                        <?php 
+                            // query information from 'users' table
+                            $query = "SELECT * FROM users WHERE position = '1' AND username =  " or die("Error:" . mysqli_error($link));
+                            //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
+                            $result = mysqli_query($conn, $query); 
+                            https://www.youtube.com/watch?v=wXu0ymUEIR4
 
+                            //5. close connection
+                            mysqli_close($conn);
+                        ?>
+                        </tr>
+                    </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
+
     <footer class="page-footer bg-dark fixed-bottom">
         <div class="footer-copyright text-center py-3">
             <span class="text-muted">&copy;Sineenat Seesung 2020</span>
