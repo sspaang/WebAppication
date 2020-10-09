@@ -9,20 +9,21 @@
         $password = mysqli_real_escape_string($conn, $_POST['password']);
 
         if (count($errors) == 0) {
-            $password = $password;
+            //$password = $password;
             $query = "SELECT * FROM users WHERE username = '$username' AND password = '$password' ";
             $result  = mysqli_query($conn, $query);
-            $student = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND position = '1'";
-            $teacher = "SELECT * FROM users WHERE username = '$username' AND password = '$password' AND position = '2'";
-            $result_teacher = mysqli_query($conn, $teacher);
-            $result_student = mysqli_query($conn, $student);
             
-            if (mysqli_num_rows($result) == 1) {
+            if (mysqli_num_rows($result) == 1) { // ถ้าข้อมูลมีใน database
+                
+                $row = mysqli_fetch_array($result);
+                // เก็บ session ของ username
                 $_SESSION['username'] = $username;
+                $_SESSION['id'] = $row['id'];
+                $_SESSION['position'] = $row['position'];
 
-                if (mysqli_num_rows($result_student) == 1) { // ถ้ามีเป็นนักเรียน
+                if ($_SESSION['position'] == '1') { // ถ้าเป็นนักเรียน
                     header("location: student_home.php");
-                } elseif (mysqli_num_rows($result_teacher) == 1) { // ถ้าเป็นอาจารย์
+                } elseif ($_SESSION['position'] == '2') { // ถ้าเป็นอาจารย์
                     header("location: teacher_home.php");
                 }
             } else {
