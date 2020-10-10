@@ -28,7 +28,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="table-responsive">
-                    <h3>This class has student: <?php echo $rowcount ?></h3>
+                    <h3>This class has <?php echo $rowcount ?> students</h3>
                     <table class="table table-hover">
                     <caption>List of students</caption>
                     <thead class="thead-dark">
