@@ -1,4 +1,5 @@
 <ul class="list-unstyled components">
+                <p>Hello <?php echo $_SESSION['username'] ?>
                 <p>Menu</p>
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Class</a>

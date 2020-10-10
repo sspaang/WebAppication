@@ -1,6 +1,7 @@
 <?php 
     //connect database
     include('server.php');
+    session_start();
 
     include 'header.php';
     include 'banner_loggedin.php';
