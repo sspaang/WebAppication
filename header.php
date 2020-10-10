@@ -26,5 +26,7 @@
         font-family: "Kanit";
         }
     </style>
+    <!-- Custom styles for this template -->
+    <link href="css/signup.css" rel="stylesheet">
 </head>
 <body>

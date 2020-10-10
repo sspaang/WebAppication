@@ -1,5 +1,10 @@
-<?php 
+<?php
+    include 'server.php';
     session_start();
+    $ID = $_SESSION['id'];
+    $sql = "SELECT * FROM users WHERE id = $ID";
+    $result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($link));
+    $row = mysqli_fetch_assoc($result);
 
     include 'header.php';
     include 'banner.php';
@@ -15,36 +20,26 @@
                     </button> 
                 </div>
             </nav>
-            <div class="container-fluid">    
-                <div class="table-responsive">
-                    <table class="table table-hover"> <!-- เอา form มาใส่แทน -->
-                    <caption>List of students</caption>
-                    <thead class="thead-dark">
-                        <tr>
-                        <th scope="col">#ID</th>
-                        <th scope="col">Username</th>
-                        <th scope="col">Firstname</th>
-                        <th scope="col">Lastname</th>
-                        <th scope="col">Email</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                        <?php 
-                            // query information from 'users' table
-                            $query = "SELECT * FROM users WHERE position = '1' AND username =  " or die("Error:" . mysqli_error($link));
-                            //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
-                            $result = mysqli_query($conn, $query); 
-                            https://www.youtube.com/watch?v=wXu0ymUEIR4
-
-                            //5. close connection
-                            mysqli_close($conn);
-                        ?>
-                        </tr>
-                    </tbody>
-                    </table>
+            <body>
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-sm">
+                            <form class="form-signin" action="edit_db.php" method="post">
+                                <h1 class="h3 mb-3 font-weight-normal">Reset Password</h1>
+                                <input type="text" name="username" required class="form-control" autocomplete="off" value="<?php echo $row['username'];?>" disabled>
+                                <label for="inputPassword1" class="sr-only">Password</label>
+                                <input type="password" id="inputPassword1" class="form-control" name="e_password1" placeholder="Password" required>
+                                <label for="inputPassword2" class="sr-only">Confirm Password</label>
+                                <input type="password" id="inputPassword2" class="form-control" name="e_password2" placeholder="Confirm Password" required>
+                                <button class="btn btn-lg btn-primary btn-block" type="submit" name="edit_pw">Apply</button>                               
+                            </form>
+                        </div>
+                        <div class="col-sm"></div>
+                        <div class="col-sm"></div>
+                    </div>     
                 </div>
-            </div>
+            </body>
+        </div>
         </div>
     </div>
     
