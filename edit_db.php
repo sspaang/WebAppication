@@ -3,7 +3,7 @@ include('server.php');
 session_start();
 
 $errors = array();
-
+    // เปลี่ยน password
     if (isset($_POST['edit_pw'])) {
         $user = $_SESSION['username'];
         $pass1 = mysqli_real_escape_string($conn, $_POST['e_password1']);
@@ -26,6 +26,24 @@ $errors = array();
         }
         // close connection
         mysqli_close($conn);
+    }
+    // เปลี่ยนชื่อ นามสกุล
+    if (isset($_POST['edit_pf'])) {
+        $user = $_SESSION['username'];
+        $firstname = mysqli_real_escape_string($conn, $_POST['Fname']);
+        $lastname = mysqli_real_escape_string($conn, $_POST['Lname']);
         
+        if (count($errors) == 0) {
+            $sql = "UPDATE users 
+            SET firstname = '$firstname',
+                lastname = '$lastname'
+            WHERE username = '$user'";
+            $query = mysqli_query($conn, $sql);
+            echo "<script>";
+            echo "alert(\" เปลี่ยนชื่อสำเร็จ\");"; 
+            echo "window.history.back()";
+            echo "</script>";
+        }
+        mysqli_close($conn); 
     }
 ?>
