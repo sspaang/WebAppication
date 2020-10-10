@@ -3,6 +3,7 @@
     include('server.php');
     session_start();
 
+    $title = 'Student List';
     include 'header.php';
     include 'banner.php';
     include 'sidebar.php';

@@ -1,6 +1,7 @@
 <?php 
     session_start();
 
+    $title = 'About';
     include 'header.php';
     include 'banner.php';
     include 'sidebar.php';

@@ -6,6 +6,7 @@
     $result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($link));
     $row = mysqli_fetch_assoc($result);
 
+    $title = 'Manage Profile';
     include 'header.php';
     include 'banner.php';
     include 'sidebar.php';
