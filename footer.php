@@ -1,7 +1,7 @@
     <!-- footer  -->
     <footer class="page-footer bg-dark fixed-bottom">
         <div class="footer-copyright text-center py-3">
-            <span class="text-muted">&copy;Sineenat Seesung 2020</span>
+            <span class="text-muted">Sineenat Seesung & Wittaya Thongjeen 2020</span>
         </div>
     </footer>
     
