@@ -8,8 +8,15 @@
     include 'banner.php';
     include 'sidebar.php';
 
+    $id = $_SESSION['id'];
     // query information from 'users' table
-    $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
+    $query = "SELECT * FROM users WHERE position = '1' 
+            AND id IN 
+            (SELECT enroll.id_student FROM teach JOIN enroll 
+                ON teach.class_id = enroll.class_id
+                AND teach.id_teacher = $id)
+                ORDER BY id ASC" 
+                or die("Error:" . mysqli_error($link));
     //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
     $result = mysqli_query($conn, $query);
     // นับว่ามีนักเรียนทั้งหมดกี่คน
