@@ -4,8 +4,8 @@
     session_start();
 
     include 'header.php';
-    include 'banner_loggedin.php';
-    include 'sidebar_teacher.php';
+    include 'banner.php';
+    include 'sidebar.php';
 
     // query information from 'users' table
     $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
