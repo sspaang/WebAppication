@@ -7,12 +7,8 @@
     }
 
     include 'header.php';
-    include 'banner_loggedin.php';
-    if ($_SESSION['position'] == '1') {
-        include 'sidebar_student.php';
-    } elseif ($_SESSION['position'] == '2') {
-        include 'sidebar_teacher.php';
-    }
+    include 'banner.php';
+    include 'sidebar.php';
     include 'content_edit_info.php';
     include 'footer.php';
 ?>

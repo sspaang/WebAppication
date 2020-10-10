@@ -4,9 +4,9 @@ CREATE DATABASE online_learning;
 -- 'users' table
 CREATE TABLE users (
 	id int(8) NOT NULL AUTO_INCREMENT,
-	username varchar(100) NOT NULL,
+	username varchar(100) NOT NULL UNIQUE,
 	position varchar(1) NOT NULL,
-	email varchar(100) NOT NULL,
+	email varchar(100) NOT NULL UNIQUE,
 	password varchar(100) NOT NULL,
 	firstname varchar(100) NOT NULL,
 	lastname varchar(100) NOT NULL,
@@ -26,8 +26,8 @@ CREATE TABLE class (
 	id_teacher int(11) NOT NULL,
 	id_student int(11) NOT NULL,
 	PRIMARY KEY (class_id),
-	FOREIGN KEY (id_teacher) REFERENCES users(id),
-	FOREIGN KEY (id_student) REFERENCES users(id)
+	FOREIGN KEY (id_teacher) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (id_student) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'class'
@@ -38,8 +38,8 @@ INSERT INTO class (class_id, class_name, id_teacher, id_student) VALUES (31002, 
 CREATE TABLE teach (
 	id_teacher int(11) NOT NULL,
 	class_id int(5) NOT NULL,
-	FOREIGN KEY (id_teacher) REFERENCES users(id),
-	FOREIGN KEY (class_id) REFERENCES class(class_id)
+	FOREIGN KEY (id_teacher) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (class_id) REFERENCES class(class_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'teach'
@@ -50,8 +50,8 @@ INSERT INTO teach VALUES (4, 31002);
 CREATE TABLE enroll (
 	id_student int(11) NOT NULL,
 	class_id int(5) NOT NULL,
-	FOREIGN KEY (id_student) REFERENCES users(id),
-	FOREIGN KEY (class_id) REFERENCES class(class_id)
+	FOREIGN KEY (id_student) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+	FOREIGN KEY (class_id) REFERENCES class(class_id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'enroll'
@@ -61,7 +61,7 @@ INSERT INTO enroll VALUES (2, 31002);
 -- 'status' table
 CREATE TABLE position_describe (
 	position varchar(1) NOT NULL,
-	describ varchar(10) NOT NULL,
+	describ varchar(10) NOT NULL
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'position_describe'

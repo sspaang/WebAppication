@@ -1,10 +1,18 @@
 <?php 
     //connect database
     include('server.php');
+    session_start();
 
     include 'header.php';
-    include 'banner_loggedin.php';
-    include 'sidebar_teacher.php';
+    include 'banner.php';
+    include 'sidebar.php';
+
+    // query information from 'users' table
+    $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
+    //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
+    $result = mysqli_query($conn, $query);
+    // นับว่ามีนักเรียนทั้งหมดกี่คน
+    $rowcount = mysqli_num_rows($result);
     
 ?>
     <!-- page content -->
@@ -20,6 +28,7 @@
             </nav>
             <div class="container-fluid">
                 <div class="table-responsive">
+                    <h3>This class has student: <?php echo $rowcount ?></h3>
                     <table class="table table-hover">
                     <caption>List of students</caption>
                     <thead class="thead-dark">
@@ -34,10 +43,6 @@
                     <tbody>
                         <tr>
                         <?php 
-                            // query information from 'users' table
-                            $query = "SELECT * FROM users WHERE position = '1' ORDER BY id asc" or die("Error:" . mysqli_error($link));
-                            //3.เก็บข้อมูลที่ query ออกมาไว้ในตัวแปร result . 
-                            $result = mysqli_query($conn, $query); 
                             while($row = mysqli_fetch_array($result)) { 
                                 echo "<tr>";
                                 echo "<td>" .$row["id"] .  "</td> "; 
@@ -47,6 +52,8 @@
                                 echo "<td>" .$row["email"] .  "</td> ";
                                 echo "</tr>";
                             }
+                            // free result set
+                            mysqli_free_result($result);
                             //5. close connection
                             mysqli_close($conn);
                         ?>
