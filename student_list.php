@@ -10,8 +10,7 @@
 
     $id = $_SESSION['id'];
     // query information from 'users' table
-    $query = "SELECT * FROM users WHERE position = '1' 
-            AND id IN 
+    $query = "SELECT * FROM users WHERE id IN 
             (SELECT enroll.id_student FROM teach JOIN enroll 
                 ON teach.class_id = enroll.class_id
                 AND teach.id_teacher = $id)
