@@ -5,4 +5,11 @@
                         <i class="fas fa-align-left"></i>
                         <span>Menu</span>
                     </button>
+
+                    <div class="navbar-nav ml-auto">
+                        <a href="cart.php" class="nav-item nav-link active">
+                            <i class="fas fa-shopping-cart"></i> Cart 0   
+                        </a>
+                    </div>
+                </div>
             </nav>

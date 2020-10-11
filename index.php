@@ -1,5 +1,7 @@
 
 <?php 
+    session_start();
+
     require_once('./function/DB.php');
     require_once('./function/component.php');
 

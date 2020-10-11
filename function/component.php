@@ -1,10 +1,10 @@
 <?php 
 
-function component($coursename, $courseprice, $courseimg) {
+function component($coursename, $courseprice, $courseimg, $classid) {
     $element = "
     
-    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0'>
-        <form action='index.php' method='post'>
+    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0 py-2'>
+        <form action='edit_db.php' method='post'>
             <div class='card shadow'>
                 <div>
                     <img src='$courseimg' alt='Image1' class='img-fluid card-img-top'>
@@ -26,6 +26,7 @@ function component($coursename, $courseprice, $courseimg) {
                         <span class='price'>฿$courseprice</span>
                     </h5>
                     <button type='submit' class='btn btn-primary my-3' name='add'>Add to cart <i class='fas fa-shopping-cart'></i></button>
+                    <input type='hidden' name='class_id' value='$classid'>
                 </div>
             </div>
         </form>
@@ -46,12 +47,12 @@ function classlist($classlink, $classname) {
     echo $element;
 }
 
-function enrolledComponent($coursename, $courseimg) {
+function enrolledComponent($coursename, $courseimg, $classlink) {
 
     $element = "
     
-    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0'>
-        <form action='index.php' method='post'>
+    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0 py-2'>
+        <form action='edit_db.php' method='post'>
             <div class='card shadow'>
                 <div>
                     <img src='$courseimg' alt='Image1' class='img-fluid card-img-top'>
@@ -61,7 +62,7 @@ function enrolledComponent($coursename, $courseimg) {
                     <p class='card-text small-text'>
                         Do you want to learn this?
                     </p>
-                    <button type='submit' class='btn btn-primary my-3' name='enter'>Learn</button>
+                    <a class='btn btn-primary' href='$classlink' role='button'>Learn</a>
                 </div>
             </div>
         </form>

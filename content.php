@@ -13,7 +13,7 @@
                     ?> 
                 </div>
                 <div class="mx-3">
-                    <h3>New Course</h3>
+                    <!-- Other Catagory Title Here -->
                 </div>
                 <!-- Other Catagory Here -->
             </div>
