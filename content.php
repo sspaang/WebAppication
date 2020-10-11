@@ -14,13 +14,11 @@
                 </div> 
                 <div class="row text-center py-2">
                     <?php 
-                        component("Database", 399,"./img/database.jpg");
-                        component("English", 199,"./img/database.jpg");
-                        component("Database", 399,"./img/database.jpg");
-                        component("Database", 399,"./img/database.jpg");
-                        component("Database", 399,"./img/database.jpg");
-                        component("Database", 399,"./img/database.jpg");
-                    ?>
+                        $result = $database->getData('class');
+                        while ($row = mysqli_fetch_assoc($result)) {
+                            component($row['class_name'], $row['class_price'], $row['class_img']);
+                        }
+                    ?> 
                 </div> 
             </div>
         </div>

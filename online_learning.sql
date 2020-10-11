@@ -29,8 +29,13 @@ CREATE TABLE class (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'class'
-INSERT INTO class (class_id, class_name, class_price) VALUES (31001, 'Database', 399);
-INSERT INTO class (class_id, class_name, class_price) VALUES (31002, 'English', 199);
+INSERT INTO class (class_id, class_name, class_price, class_img) VALUES (31001, 'Database', 399, './img/database.jpg');
+INSERT INTO class (class_name, class_price, class_img) VALUES ('English', 199, './img/english.jpg'),
+('Mathematics', 299, './img/math.jpg'),
+('Computer Hardware', 299, './img/computer_hw.jpg'),
+('Programming', 199, './img/programming.jpg'),
+('Web Design', 299, './img/web_design.jpg');
+
 
 
 -- 'teach' table
