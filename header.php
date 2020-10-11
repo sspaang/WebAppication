@@ -31,6 +31,11 @@
     p.small-text{
         font-size: 15px;
     }
+    #cart_count{
+        text-align: center;
+        padding: 0.1rem 0.9rem 0.1rem 0.9rem;
+        border-radius: 2rem;
+    }
     </style>
     <!-- Custom styles for this template -->
     <link href="css/signup.css" rel="stylesheet">
