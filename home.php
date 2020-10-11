@@ -4,6 +4,7 @@
     $title = 'Home';
     include 'header.php';
     include 'sidebar.php';
+    include 'toggleMenu.php';
     if ($_SESSION['position'] == '1') {
         include 'content_student.php';
     } elseif ($_SESSION['position'] == '2') {

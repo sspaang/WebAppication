@@ -15,6 +15,7 @@
         <!-- page content -->
             <div class="container-fluid">    
                 <div class="row">
+                    <div class="col-sm"></div>
                     <div class="col-sm">
                         <form class="form-signin" action="edit_db.php" method="post">
                             <h1 class="h3 mb-3 font-weight-normal">Profile</h1>
@@ -25,7 +26,6 @@
                             <button class="btn btn-lg btn-primary btn-block" type="submit" name="edit_pf">Apply</button>                               
                         </form>
                     </div>
-                    <div class="col-sm"></div>
                     <div class="col-sm"></div>
                 </div>     
             </div>

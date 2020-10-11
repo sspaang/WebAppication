@@ -36,14 +36,12 @@ INSERT INTO class (class_name, class_price, class_img) VALUES ('English', 199, '
 ('Programming', 199, './img/programming.jpg'),
 ('Web Design', 299, './img/web_design.jpg');
 
-
-
 -- 'teach' table
 CREATE TABLE teach (
 	id_teacher int(11) NOT NULL,
 	class_id int(5) NOT NULL,
-	FOREIGN KEY (id_teacher) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (class_id) REFERENCES class(class_id) ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY (id_teacher) REFERENCES users(id) ON UPDATE CASCADE,
+	FOREIGN KEY (class_id) REFERENCES class(class_id) ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'teach'
@@ -54,8 +52,8 @@ INSERT INTO teach VALUES (4, 31002);
 CREATE TABLE enroll (
 	id_student int(11) NOT NULL,
 	class_id int(5) NOT NULL,
-	FOREIGN KEY (id_student) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (class_id) REFERENCES class(class_id) ON DELETE CASCADE ON UPDATE CASCADE
+	FOREIGN KEY (id_student) REFERENCES users(id) ON UPDATE CASCADE,
+	FOREIGN KEY (class_id) REFERENCES class(class_id) ON UPDATE CASCADE
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'enroll'
