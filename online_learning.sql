@@ -5,7 +5,6 @@ CREATE DATABASE online_learning;
 CREATE TABLE users (
 	id int(8) NOT NULL AUTO_INCREMENT,
 	username varchar(100) NOT NULL UNIQUE,
-	position varchar(1) NOT NULL,
 	email varchar(100) NOT NULL UNIQUE,
 	password varchar(100) NOT NULL,
 	firstname varchar(100) NOT NULL,
@@ -14,10 +13,8 @@ CREATE TABLE users (
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'users'
-INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('user', '1','user@email.com', '1234', 'Hello', 'World');
-INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('user1', '1','user1@email.com', '1234', 'Miss', 'Student');
-INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('teacher', '2','teacher@email.com', '1234', 'Mr', 'Teacher');
-INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('teacher1', '2','teacher1@email.com', '1234', 'Ms', 'Teacher');
+INSERT INTO users (username, email, password, firstname, lastname) VALUES ('user', 'user@email.com', '1234', 'Hello', 'World');
+INSERT INTO users (username, email, password, firstname, lastname) VALUES ('user1', 'user1@email.com', '1234', 'Miss', 'Student');
 
 -- 'class' table
 CREATE TABLE class (
@@ -36,18 +33,6 @@ INSERT INTO class (class_name, class_price, class_img) VALUES ('English', 199, '
 ('Programming', 199, './img/programming.jpg'),
 ('Web Design', 299, './img/web_design.jpg');
 
--- 'teach' table
-CREATE TABLE teach (
-	id_teacher int(11) NOT NULL,
-	class_id int(5) NOT NULL,
-	FOREIGN KEY (id_teacher) REFERENCES users(id) ON UPDATE CASCADE,
-	FOREIGN KEY (class_id) REFERENCES class(class_id) ON UPDATE CASCADE
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
--- insert into table 'teach'
-INSERT INTO teach VALUES (3, 31001);
-INSERT INTO teach VALUES (4, 31002);
-
 -- 'enroll' table
 CREATE TABLE enroll (
 	id_student int(11) NOT NULL,
@@ -59,13 +44,3 @@ CREATE TABLE enroll (
 -- insert into table 'enroll'
 INSERT INTO enroll VALUES (1, 31001);
 INSERT INTO enroll VALUES (2, 31002);
-
--- 'status' table
-CREATE TABLE position_describe (
-	position varchar(1) NOT NULL,
-	describ varchar(10) NOT NULL
-) ENGINE=INNODB DEFAULT CHARSET=utf8;
-
--- insert into table 'position_describe'
-INSERT INTO position_describe VALUES ('1', 'student');
-INSERT INTO position_describe VALUES ('2', 'teacher');
