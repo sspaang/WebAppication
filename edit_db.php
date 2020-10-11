@@ -70,12 +70,11 @@ $errors = array();
                     );
 
                     $_SESSION['cart'][$count] = $item_array;
-                    
                 }
 
             } else {
                 $item_array = array(
-                    'class_id'=>$_POST['class_id']
+                    'class_id'=>$_POST['class_id'] 
                 );
 
                 // create new session variable
