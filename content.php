@@ -9,9 +9,19 @@
                 </div>
             </nav>
             <div class="container-fluid">
-                
-                <!-- Content -->    
-
+                <div class="mx-3">
+                    <h3>Lesson</h3>
+                </div> 
+                <div class="row text-center py-2">
+                    <?php 
+                        component("Database", 399,"./img/database.jpg");
+                        component("English", 199,"./img/database.jpg");
+                        component("Database", 399,"./img/database.jpg");
+                        component("Database", 399,"./img/database.jpg");
+                        component("Database", 399,"./img/database.jpg");
+                        component("Database", 399,"./img/database.jpg");
+                    ?>
+                </div> 
             </div>
         </div>
     </div>

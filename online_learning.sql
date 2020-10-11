@@ -23,16 +23,15 @@ INSERT INTO users (username, position, email, password, firstname, lastname) VAL
 CREATE TABLE class (
 	class_id int(5) NOT NULL AUTO_INCREMENT,
 	class_name varchar(100) NOT NULL,
-	id_teacher int(11) NOT NULL,
-	id_student int(11) NOT NULL,
-	PRIMARY KEY (class_id),
-	FOREIGN KEY (id_teacher) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
-	FOREIGN KEY (id_student) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
+	class_price int NOT NULL,
+	class_img varchar(100)
+	PRIMARY KEY (class_id)
 ) ENGINE=INNODB DEFAULT CHARSET=utf8;
 
 -- insert into table 'class'
-INSERT INTO class (class_id, class_name, id_teacher, id_student) VALUES (31001, 'Database', 3, 1);
-INSERT INTO class (class_id, class_name, id_teacher, id_student) VALUES (31002, 'English', 4, 2);
+INSERT INTO class (class_id, class_name, class_price) VALUES (31001, 'Database', 399);
+INSERT INTO class (class_id, class_name, class_price) VALUES (31002, 'English', 199);
+
 
 -- 'teach' table
 CREATE TABLE teach (
