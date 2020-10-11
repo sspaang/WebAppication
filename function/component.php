@@ -34,3 +34,14 @@ function component($coursename, $courseprice, $courseimg) {
     ";
     echo $element;
 }
+
+function classlist($classlink, $classname) {
+    $element = "
+
+    <li>
+        <a href='$classlink'>$classname</a>
+    </li>
+
+    ";
+    echo $element;
+}

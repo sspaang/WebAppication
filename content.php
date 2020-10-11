@@ -11,7 +11,11 @@
                             component($row['class_name'], $row['class_price'], $row['class_img']);
                         }
                     ?> 
-                </div> 
+                </div>
+                <div class="mx-3">
+                    <h3>New Course</h3>
+                </div>
+                <!-- Other Catagory Here -->
             </div>
         </div>
     </div>

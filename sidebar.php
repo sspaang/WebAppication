@@ -27,21 +27,12 @@
                 <li class="active">
                     <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Lesson</a>
                     <ul class="collapse list-unstyled" id="homeSubmenu">
-                        <li>
-                            <a href="#">Database</a>
-                        </li>
-                        <li>
-                            <a href="#">English</a>
-                        </li>
-                        <li>
-                            <a href="#">Math</a>
-                        </li>
-                        <li>
-                            <a href="#">Science</a>
-                        </li>
-                        <li>
-                            <a href="#">Programming</a>
-                        </li>
+                        <?php 
+                            $result = $database->getData('class');
+                            while ($row = mysqli_fetch_assoc($result)) {
+                                classlist('#', $row['class_name']);
+                            }
+                        ?> 
                     </ul>
                 </li>
                 <li>

@@ -1,6 +1,12 @@
 <?php 
     include 'server.php';
     session_start();
+
+    require_once('./function/DB.php');
+    require_once('./function/component.php');
+
+    $database = new DB();
+    
     $ID = $_SESSION['id'];
     $sql = "SELECT * FROM users WHERE id = $ID";
     $result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($link));
