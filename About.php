@@ -14,13 +14,14 @@
 
 <!-- page content -->
         <div class="container-fluid">
-            
-            <h1>Members</h1>
-            <div class="th-lang">
-                <h3>61363753 นายวิทยา ทองจีน</h3>
-                <h3>61364392 นางสาวสิณีนาฏ สีสังข์</h3>
-                <p class='th-lang'>เป็นส่วนหนึ่งของรายวิชา Database 305365-2</p>  
-            </div>
+            <div class="text-center">
+                <div class="th-lang">
+                    <h1>Members</h1>
+                    <h4>61363753 นายวิทยา ทองจีน</h4>
+                    <h4>61364392 นางสาวสิณีนาฏ สีสังข์</h4>
+                    <p class='th-lang'>เป็นส่วนหนึ่งของรายวิชา Database 305365-2</p>  
+                </div>
+            </div>  
         </div>
     </div>
 </div>
