@@ -5,16 +5,13 @@
     require_once('./function/component.php');
 
     $database = new DB();
+    $student_id = $_SESSION['id'];
 
     $title = 'Home';
     include 'header.php';
     include 'sidebar.php';
     include 'toggleMenu.php';
-    if ($_SESSION['position'] == '1') {
-        include 'content_student.php';
-    } elseif ($_SESSION['position'] == '2') {
-        include 'content_teacher.php';
-    }
+    include 'content_student.php';
     include 'footer.php';
 
 ?>

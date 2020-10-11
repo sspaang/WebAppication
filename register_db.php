@@ -11,7 +11,6 @@
         $password_2 = mysqli_real_escape_string($conn, $_POST['password_2']);
         $firstname = mysqli_real_escape_string($conn, $_POST['firstname']);
         $lastname = mysqli_real_escape_string($conn, $_POST['lastname']);
-        $position = mysqli_real_escape_string($conn, $_POST['position']);
 
         if ($password_1 != $password_2) {
             array_push($errors, "The password do not match");
@@ -36,11 +35,10 @@
             if (count($errors) == 0) {
                 $password = $password_1;
 
-                $sql = "INSERT INTO users (username, position, email, password, firstname, lastname) VALUES ('$username', '$position','$email', '$password', '$firstname', '$lastname')";
+                $sql = "INSERT INTO users (username, email, password, firstname, lastname) VALUES ('$username','$email', '$password', '$firstname', '$lastname')";
                 mysqli_query($conn, $sql);
 
                 $_SESSION['username'] = $username; // เก็บ session username
-                $_SESSION['position'] = $position;
 
                 header('location: login.php');
 

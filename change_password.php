@@ -10,7 +10,7 @@
     $ID = $_SESSION['id'];
     $sql = "SELECT * FROM users WHERE id = $ID";
     $result = mysqli_query($conn, $sql) or die ("Error in query: $sql " . mysqli_error($link));
-    $row = mysqli_fetch_assoc($result);
+    $rows = mysqli_fetch_assoc($result);
 
     $title = 'Manage Password';
     include 'header.php';
@@ -24,7 +24,7 @@
                     <div class="col-sm">
                         <form class="form-signin" action="edit_db.php" method="post">
                             <h1 class="h3 mb-3 font-weight-normal">Reset Password</h1>
-                            <input type="text" name="username" required class="form-control" autocomplete="off" value="<?php echo $row['username'];?>" disabled>
+                            <input type="text" name="username" required class="form-control" autocomplete="off" value="<?php echo $rows['username'];?>" disabled>
                             <label for="inputPassword1" class="sr-only">Password</label>
                             <input type="password" id="inputPassword1" class="form-control" name="e_password1" placeholder="Password" required>
                             <label for="inputPassword2" class="sr-only">Confirm Password</label>

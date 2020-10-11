@@ -45,3 +45,29 @@ function classlist($classlink, $classname) {
     ";
     echo $element;
 }
+
+function enrolledComponent($coursename, $courseimg) {
+
+    $element = "
+    
+    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0'>
+        <form action='index.php' method='post'>
+            <div class='card shadow'>
+                <div>
+                    <img src='$courseimg' alt='Image1' class='img-fluid card-img-top'>
+                </div>
+                <div class='card-body'>
+                    <h5 class='card-title'>$coursename</h5>
+                    <p class='card-text small-text'>
+                        Do you want to learn this?
+                    </p>
+                    <button type='submit' class='btn btn-primary my-3' name='enter'>Learn</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    
+    ";
+    echo $element;
+}
+

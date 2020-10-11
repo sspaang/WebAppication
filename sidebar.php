@@ -21,7 +21,7 @@
             </div>
             <ul class="list-unstyled components">
                 <?php if (isset($_SESSION['username'])) : ?>
-                    <p>Hello <b><?php echo $_SESSION['username'] ?></b></p>
+                    <p>Hello [<b><?php echo $_SESSION['username'] ?></b>]</p>
                 <?php endif ?>
                 <p>Menu</p>
                 <li class="active">
@@ -50,11 +50,6 @@
                         </li>
                     </ul>
                 </li>
-                <?php endif ?>
-                <?php if(isset($_SESSION['username']) and $_SESSION['position'] == '2') : ?>
-                    <li>
-                    <a href="student_list.php">Student list</a>
-                    </li>
                 <?php endif ?>
 
                 <?php if (!isset($_SESSION['username'])) : ?>

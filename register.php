@@ -64,12 +64,6 @@
         <input type="text" id="inputFName" class="form-control" name="firstname" placeholder="Firstname" required>
         <label for="inputLName" class="sr-only">Lastname</label>
         <input type="text" id="inputLName" class="form-control" name="lastname" placeholder="Lastname" required>
-        <label for="Position" class="sr-only">Position</label>
-        <select name="position" id="Position" class="form-control" required>
-          <option>Choose Position...</option>
-          <option value="1">นักเรียน</option>
-          <option value="2">อาจารย์</option>
-        </select>
         <br>
         <button class="btn btn-lg btn-primary btn-block" type="submit" name="reg_user">Sign in</button>
         <p class="mt-5 mb-3 text-muted">&copy; 2020</p>

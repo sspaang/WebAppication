@@ -19,7 +19,6 @@
                 // เก็บ session ของ username
                 $_SESSION['username'] = $username;
                 $_SESSION['id'] = $row['id'];
-                $_SESSION['position'] = $row['position'];
                 
                 header('location: home.php');
             } else {
