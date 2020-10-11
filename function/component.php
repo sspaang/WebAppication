@@ -3,7 +3,7 @@
 function component($coursename, $courseprice, $courseimg) {
     $element = "
     
-    <div class='col-md-2 col-sm-6 my-3 my-md-0'>
+    <div class='col-lg-2 col-md-5 col-sm-6 my-3 my-md-0'>
         <form action='index.php' method='post'>
             <div class='card shadow'>
                 <div>
@@ -19,7 +19,7 @@ function component($coursename, $courseprice, $courseimg) {
                         <i class='far fa-star'></i>
                     </h6>
                     <p class='card-text small-text'>
-                        Database 305365-2
+                        Do you want to learn this?
                     </p>
                     <h5>
                         <small><s class='text-secondary'>฿799</s></small>

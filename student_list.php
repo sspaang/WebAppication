@@ -5,8 +5,8 @@
 
     $title = 'Student List';
     include 'header.php';
-    include 'banner.php';
     include 'sidebar.php';
+    include 'toggleMenu.php';
 
     $id = $_SESSION['id'];
     // query information from 'users' table
@@ -22,17 +22,6 @@
     $rowcount = mysqli_num_rows($result);
     
 ?>
-    <!-- page content -->
-    <div id="content">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-
-                    <button type="button" id="sidebarCollapse" class="btn btn-info">
-                        <i class="fas fa-align-left"></i>
-                        <span>Toggle Sidebar</span>
-                    </button> 
-                </div>
-            </nav>
             <div class="container-fluid">
                 <div class="table-responsive">
                     <h3>This class has <?php echo $rowcount ?> students</h3>

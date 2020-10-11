@@ -3,7 +3,6 @@
 
     $title = 'Home';
     include 'header.php';
-    include 'banner.php';
     include 'sidebar.php';
     if ($_SESSION['position'] == '1') {
         include 'content_student.php';
