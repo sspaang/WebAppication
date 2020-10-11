@@ -8,7 +8,8 @@
 
                     <div class="navbar-nav ml-auto">
                         <a href="cart.php" class="nav-item nav-link active">
-                            <i class="fas fa-shopping-cart"></i> Cart 0   
+                            <i class="fas fa-shopping-cart"></i> Cart
+                            <span id="cart_count">0</span>  
                         </a>
                     </div>
                 </div>
