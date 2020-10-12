@@ -17,7 +17,8 @@
         } else {
             if(isset($_SESSION['cart'])){
 
-                $item_array_id = array_column($_SESSION['cart'], "class_id");;
+                $item_array_id = array_column($_SESSION['cart'], "class_id"); // เรียก class_id ออกมา
+                // echo implode(', ', array_column($item_array_id, 'class_id'));
                 
                 if(in_array($_POST['class_id'], $item_array_id)) { //ถ้ามีสินค้านั้นในตะกร้าอยู่แล้ว
                     echo "<script>alert('This course is already in the cart!')</script>";
@@ -27,10 +28,10 @@
                     
                     $count = count($_SESSION['cart']);
                     $item_array = array(
-                        'class_id'=>$_POST['class_id']
+                        'class_id'=>$_POST['class_id'] // เก็บ class_id ใน array
                     );
 
-                    $_SESSION['cart'][$count] = $item_array;
+                    $_SESSION['cart'][$count] = $item_array; 
                 }
 
             } else {
