@@ -13,11 +13,11 @@
     include 'toggleMenu.php';
 ?>
 
-        <div class="container-fluid">
-            <h3>Hello World</h3>
+<div class="container-fluid">
+            
+            </div>
         </div>
     </div>
-</div>
 
 <?php
     include 'footer.php';
