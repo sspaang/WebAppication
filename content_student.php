@@ -30,7 +30,7 @@
                             $warning = "You have already enrolled all classes.";
                         } else {
                             while ($row = mysqli_fetch_assoc($result)) {
-                                Component($row['class_name'], $row['class_price'], $row['class_img'], $row['class_id']);
+                                Component('home.php',$row['class_name'], $row['class_price'], $row['class_img'], $row['class_id']);
                             }
                         }
                     ?>

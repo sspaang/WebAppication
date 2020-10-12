@@ -13,4 +13,13 @@
     include 'toggleMenu.php';
     include 'content.php';
     include 'footer.php';
+
+    if(isset($_POST['add'])){
+        if(!isset($_SESSION['username'])){
+            echo "<script>";
+            echo "alert(\" กรุณาเข้าสู่ระบบ\");"; 
+            echo "window.history.back()";
+            echo "</script>";
+        }
+    }
 ?>

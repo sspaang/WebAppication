@@ -8,7 +8,7 @@
                     <?php 
                         $result = $database->getData('class');
                         while ($row = mysqli_fetch_assoc($result)) {
-                            component($row['class_name'], $row['class_price'], $row['class_img']);
+                            component('index.php',$row['class_name'], $row['class_price'], $row['class_img'],$row['class_id']);
                         }
                     ?> 
                 </div>

@@ -1,10 +1,10 @@
 <?php 
 
-function component($coursename, $courseprice, $courseimg, $classid) {
+function component($action,$coursename, $courseprice, $courseimg, $classid) {
     $element = "
     
     <div class='col-xl-2 col-lg-5 col-md-5 col-sm-6 my-3 my-md-0 py-2'>
-        <form action='edit_db.php' method='post'>
+        <form action='$action' method='post'>
             <div class='card shadow'>
                 <div>
                     <img src='$courseimg' alt='Image1' class='img-fluid card-img-top'>
