@@ -51,7 +51,7 @@ function enrolledComponent($coursename, $courseimg, $classlink) {
 
     $element = "
     
-    <div class='col-xl-2 col-lg-2 col-md-5 col-sm-6 my-3 my-md-0 py-2'>
+    <div class='col-xl-2 col-lg-5 col-md-5 col-sm-6 my-3 my-md-0 py-2'>
         <form action='edit_db.php' method='post'>
             <div class='card shadow'>
                 <div>
