@@ -18,16 +18,6 @@
             if(isset($_SESSION['cart'])){
 
                 $item_array_id = array_column($_SESSION['cart'], "class_id"); // return an array of class_id
-                // $classid = implode(', ', array_column($item_array_id, 'class_id'));
-
-                /*
-
-                foreach ($item_array_id as $key => $val) {
-                    $sql = "INSERT INTO enroll(id_student, class_id) VALUES ($student_id, $val)";
-                    mysql_query($sql);
-                }
-
-                */
                 
                 if(in_array($_POST['class_id'], $item_array_id)) { //ถ้ามีสินค้านั้นในตะกร้าอยู่แล้ว
                     echo "<script>alert('This course is already in the cart!')</script>";

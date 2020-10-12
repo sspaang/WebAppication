@@ -82,7 +82,11 @@
                                 </div>
                             </div>
                         </div>
-
+                    </div>
+                    <div class='ml-auto mr-auto my-2'>
+                        <form action="edit_db.php" method='post'>
+                            <button type='submit' class='btn btn-primary' name='ok'>Buy</button>
+                        </form>
                     </div>
                 </div>
             </div>

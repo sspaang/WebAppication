@@ -35,9 +35,9 @@ $errors = array();
         
         if (count($errors) == 0) {
             $sql = "UPDATE users 
-            SET firstname = '$firstname',
-                lastname = '$lastname'
-            WHERE username = '$user'";
+                    SET firstname = '$firstname',
+                        lastname = '$lastname'
+                    WHERE username = '$user'";
             $query = mysqli_query($conn, $sql);
             echo "<script>";
             echo "alert(\" เปลี่ยนชื่อสำเร็จ\");"; 
@@ -46,5 +46,25 @@ $errors = array();
         }
         mysqli_close($conn); 
     }
+
+    //ซื้อคอร์สเรียน
+    if(isset($_SESSION['cart'])){
+
+        $classid = array_column($_SESSION['cart'], "class_id");
+
+        if (isset($_POST['ok'])) {
+            foreach ($classid as $key => $val) {
+                $cid = intval($val);
+                $student_id = intval($_SESSION['id']);
+                $sql = "INSERT INTO enroll VALUES ($student_id, $cid)";
+                $qry = mysqli_query($conn, $sql);
+                unset($_SESSION['cart'][$key]);
+                echo "<script>";
+                echo "alert(\" Complete!\");"; 
+                echo "window.history.back()";
+                echo "</script>";
+            }
+        }
+}
     
 ?>
