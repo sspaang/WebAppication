@@ -7,15 +7,8 @@
     $database = new DB();
     $student_id = $_SESSION['id'];
 
-    $title = 'Home';
-    include 'header.php';
-    include 'sidebar.php';
-    include 'toggleMenu.php';
-    include 'content_student.php';
-    include 'footer.php';
-
-     // add to cart
-     if(isset($_POST['add'])){
+    // add to cart
+    if(isset($_POST['add'])){
         if(!isset($_SESSION['username'])){
             echo "<script>";
             echo "alert(\" กรุณาเข้าสู่ระบบ\");"; 
@@ -26,7 +19,7 @@
 
                 $item_array_id = array_column($_SESSION['cart'], "class_id");;
                 
-                if(in_array($_POST['class_id'], $item_array_id)) {
+                if(in_array($_POST['class_id'], $item_array_id)) { //ถ้ามีสินค้านั้นในตะกร้าอยู่แล้ว
                     echo "<script>alert('This course is already in the cart!')</script>";
                     echo "<script>>window.history.back()</script>";
 
@@ -47,9 +40,16 @@
 
                 // create new session variable
                 $_SESSION['cart'][0] = $item_array;
-                print_r($_SESSION['cart']);
             }
         }
     } 
 
+
+    $title = 'Home';
+    include 'header.php';
+    include 'sidebar.php';
+    include 'toggleMenu.php';
+    include 'content_student.php';
+    include 'footer.php';
+ 
 ?>
