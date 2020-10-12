@@ -72,3 +72,24 @@ function enrolledComponent($coursename, $courseimg, $classlink) {
     echo $element;
 }
 
+function cartElement($classimg, $classname, $classprice, $class_id){
+    $element = "
+    <form action='shoppingcart.php?action=remove&classid=$class_id' method='post' class='cart-items'>
+    <div class='border rounded'>
+        <div class='row bg-white'>
+            <div class='col-md-3 pl-0'>
+                <img src=$classimg alt='Img-1' class='img-fluid'>
+            </div>
+            <div class='col-md-6'>
+                <h5 class='pt-2'>$classname</h5>
+                <small class='text-secondary'>Seller: KiKi</small>
+                <h5 class='pt-2'>฿$classprice</h5>
+                <button type='submit' class='btn btn-danger' name='remove'>Remove</button>
+            </div>
+        </div>
+    </div>
+    </form>
+    ";
+    echo $element;
+}
+

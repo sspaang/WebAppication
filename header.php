@@ -24,10 +24,10 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
 
-    <style> 
+    <style>
     .th-lang {
-        font-family: "Kanit";
-        }
+    font-family: "Kanit";
+    }
     p.small-text{
         font-size: 15px;
     }
@@ -36,9 +36,12 @@
         padding: 0.1rem 0.9rem 0.1rem 0.9rem;
         border-radius: 2rem;
     }
+    .cart-items+.cart-items{
+        padding: 2% 0;
+    }
     </style>
+
     <!-- Custom styles for this template -->
     <link href="css/signup.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
